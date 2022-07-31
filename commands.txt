@@ -1,0 +1,52 @@
+Schema File :
+
+        *Student*
+        <<
+        pk: roll
+        id int
+        name varchar 20
+        percent decimal 4 2
+        >>
+
+        *Teacher*
+        <<
+        id int
+        name varchar 30
+        >>
+
+
+* Commands  :
+
+    1. CREATE TABLE:
+
+        
+        create table Teacher(id int,name varchar(30),addr varchar(50),phno int,primary key(name));
+        create table Students(roll int check(roll > 0), name varchar(20) check(name!="ABC"), dob date, percent decimal(4,2), primary key(roll));
+        create table Peons(id int,sal int check(sal>5000 AND sal<20000), name varchar(30) check(name!=""), primary key(id));
+
+        create table Stud1(id int, primary key(id));
+        create table Stud2(id int, primary key(id));
+        create table Students(id int,name varchar(30),dob date, primary key(id));
+
+    2. INSERT INTO :
+
+        insert into Students values(100,"Saurabh Yelmame",24-02-2001,88);
+        insert into Students values(101,"Dipak Yadav",20-01-2001,99);
+        insert into Students values(102,"Prathamesh Wavhal",02-07-2001,100);
+        insert into Students values(103,"Shabbir Asgar",28-07-2001,97);
+
+    3. DROP TABLE : 
+
+        drop table Students;
+
+    4. HELP :
+
+        help tables;
+        help create;
+
+    5. SELECT
+
+        select * from Students;
+        select id,name,roll from Students;
+        select name,id from Students where id>103;
+        select id,name from Students where marks>50 and marks<70;
